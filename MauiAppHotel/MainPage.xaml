@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.MainPage"
+              Background="{DynamicResource Black}">
+    
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="hotel.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
+
+            <Button
+                x:Name="ContratacaoHosoedagemBtn"
+                Text="Calculo da Diária" 
+                FontFamily="Chewy-Regular"
+                SemanticProperties.Hint="Navega para a página de contratação de hospedagem"
+                Clicked="OnContratacaoHospedagemClicked"
+                HorizontalOptions="Fill"
+                BackgroundColor="#23507a"
+                 FontSize="20"
+                 TextColor="#cac7bb"/> 
+            <Button
+                x:Name="NavigateBtn"
+                Text="Sobre o app" 
+                FontFamily="Chewy-Regular"
+                SemanticProperties.Hint="Navega para a segunda Sobre o app"
+                Clicked="OnNavigateButtonClicked"
+                HorizontalOptions="Fill"
+                BackgroundColor="#23507a"
+                 FontSize="20"
+                 TextColor="#cac7bb"
+                /> 
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

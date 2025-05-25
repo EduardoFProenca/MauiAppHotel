@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.HospedagemSobre"
+             Title="HospedagemSobre"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#23507a">
+    <VerticalStackLayout>
+        <Label 
+            Text="Sobre o app"
+            HorizontalTextAlignment="Center"
+            FontFamily="Chewy-Regular"
+            FontSize="60"
+            TextColor="#cac7bb"/>
+
+        <Border Padding="15" BackgroundColor="Black">
+            <VerticalStackLayout>
+                <Label
+                    Text="Desenvolvido por"
+                    HorizontalTextAlignment="Center"
+                    FontFamily="Chewy-Regular"
+                    FontSize="20"
+                    TextColor="#cac7bb"/>
+                <Label 
+                    Text="Eduardo Ferreira Proença" 
+                    HorizontalTextAlignment="Center"
+                    FontFamily="Chewy-Regular"
+                    FontSize="25"
+                    TextColor="#cac7bb"/>
+                <Label 
+                    Text="Projeto desenvolvido em 2025" 
+                    HorizontalTextAlignment="Center"
+                    FontFamily="Chewy-Regular"
+                    FontSize="22"
+                    TextColor="#cac7bb"/>
+                <Label
+                    Text="Empresa"
+                    HorizontalTextAlignment="Center"
+                    FontFamily="Chewy-Regular"
+                    FontSize="20"
+                    TextColor="#cac7bb"/>
+
+                <Image 
+                    Source="softwarebyworld.png"
+                    HeightRequest="150"
+                    WidthRequest="150"
+                    HorizontalOptions="Center"
+                    Aspect="AspectFit"/>
+            </VerticalStackLayout>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>
