@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.CadastroEvento"
+             Title="CadastroEvento"
+             BackgroundColor="Black">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="20">
+            <Label 
+                Text="Cadastro de Evento"
+                FontFamily="Chewy-Regular"
+                FontSize="40"
+                TextColor="#cac7bb"
+                HorizontalTextAlignment="Center"
+                Margin="0,0,0,20"/>
+
+            <Border Padding="20" BackgroundColor="#23507a" StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="15">
+
+                    <!-- Nome do Evento -->
+                    <VerticalStackLayout>
+                        <Label Text="Nome do Evento:"
+                               FontFamily="Chewy-Regular"
+                               FontSize="18"
+                               TextColor="#cac7bb"/>
+                        <Entry x:Name="entry_nome_evento"
+                               Placeholder="Digite o nome do evento"
+                               PlaceholderColor="#999"
+                               TextColor="#cac7bb"
+                               BackgroundColor="Black"
+                               Text="{Binding NomeEvento}"/>
+                    </VerticalStackLayout>
+
+                    <!-- Local do Evento -->
+                    <VerticalStackLayout>
+                        <Label Text="Local do Evento:"
+                               FontFamily="Chewy-Regular"
+                               FontSize="18"
+                               TextColor="#cac7bb"/>
+                        <Entry x:Name="entry_local_evento"
+                               Placeholder="Digite o local do evento"
+                               PlaceholderColor="#999"
+                               TextColor="#cac7bb"
+                               BackgroundColor="Black"
+                               Text="{Binding LocalEvento}"/>
+                    </VerticalStackLayout>
+
+                    <!-- Número de Participantes -->
+                    <VerticalStackLayout>
+                        <Label Text="Número de Participantes:"
+                               FontFamily="Chewy-Regular"
+                               FontSize="18"
+                               TextColor="#cac7bb"/>
+                        <Grid ColumnDefinitions="*,Auto,2*">
+                            <Label Grid.Column="0"
+                                   Text="{Binding Value}"
+                                   BindingContext="{x:Reference stp_participantes}"
+                                   TextColor="#cac7bb"
+                                   FontSize="16"
+                                   VerticalOptions="Center"/>
+                            <Label Grid.Column="1"
+                                   Text="participantes"
+                                   TextColor="#cac7bb"
+                                   FontSize="14"
+                                   VerticalOptions="Center"
+                                   Margin="10,0"/>
+                            <Stepper Grid.Column="2"
+                                     x:Name="stp_participantes"
+                                     Minimum="1"
+                                     Maximum="1000"
+                                     Increment="1"
+                                     Value="{Binding NumeroParticipantes}"/>
+                        </Grid>
+                    </VerticalStackLayout>
+
+                    <!-- Custo por Participante -->
+                    <VerticalStackLayout>
+                        <Label Text="Custo por Participante (R$):"
+                               FontFamily="Chewy-Regular"
+                               FontSize="18"
+                               TextColor="#cac7bb"/>
+                        <Entry x:Name="entry_custo_participante"
+                               Placeholder="0,00"
+                               PlaceholderColor="#999"
+                               TextColor="#cac7bb"
+                               BackgroundColor="Black"
+                               Keyboard="Numeric"
+                               Text="{Binding CustoPorParticipante}"/>
+                    </VerticalStackLayout>
+
+                    <!-- Período do Evento -->
+                    <Border Padding="15" BackgroundColor="Black" StrokeShape="RoundRectangle 8">
+                        <VerticalStackLayout Spacing="10">
+                            <Label Text="Período do Evento"
+                                   FontFamily="Chewy-Regular"
+                                   FontSize="22"
+                                   TextColor="#cac7bb"
+                                   HorizontalTextAlignment="Center"/>
+
+                            <HorizontalStackLayout Spacing="10">
+                                <Label Text="Data Início:"
+                                       TextColor="#cac7bb"
+                                       VerticalOptions="Center"
+                                       WidthRequest="80"/>
+                                <DatePicker x:Name="dtpk_data_inicio"
+                                            DateSelected="dtpk_data_inicio_DateSelected"
+                                            Format="dd/MM/yyyy"
+                                            Date="{Binding DataInicio}"/>
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="10">
+                                <Label Text="Data Término:"
+                                       TextColor="#cac7bb"
+                                       VerticalOptions="Center"
+                                       WidthRequest="80"/>
+                                <DatePicker x:Name="dtpk_data_termino"
+                                            Format="dd/MM/yyyy"
+                                            Date="{Binding DataTermino}"/>
+                            </HorizontalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <!-- Botão para avançar -->
+                    <Button Text="Cadastrar Evento"
+                            FontFamily="Chewy-Regular"
+                            FontSize="25"
+                            BackgroundColor="#cac7bb"
+                            TextColor="Black"
+                            Margin="0,20,0,0"
+                            Clicked="Button_CadastrarEvento_Clicked"/>
+
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

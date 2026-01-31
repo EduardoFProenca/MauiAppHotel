@@ -2,7 +2,7 @@
 {
     public partial class MainPage : ContentPage
     {
-       public MainPage()
+        public MainPage()
         {
             InitializeComponent();
         }
@@ -17,7 +17,7 @@
             {
                 await DisplayAlert("Ops", ex.Message, "OK");
             }
-       
+
         }
 
         private async void OnContratacaoHospedagemClicked(object sender, EventArgs e)
@@ -30,8 +30,18 @@
             {
                 await DisplayAlert("Ops", ex.Message, "OK");
             }
+        }
 
-           // await Shell.Current.GoToAsync(nameof(Views.ContratacaoHospedagem));
+        private async void OnCadastroEventoClicked(object sender, EventArgs e)
+        {
+            try
+            {
+                await Navigation.PushAsync(new Views.CadastroEvento());
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Ops", ex.Message, "OK");
+            }
         }
     }
 }

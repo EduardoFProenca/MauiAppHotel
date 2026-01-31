@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.ResumoEvento"
+             Title="ResumoEvento"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#23507a">
+
+    <ScrollView>
+        <VerticalStackLayout VerticalOptions="CenterAndExpand" Padding="20">
+            <Label 
+                Text="Resumo do Evento"
+                FontFamily="Chewy-Regular"
+                FontSize="40"
+                TextColor="#cac7bb"
+                HorizontalTextAlignment="Center"
+                Margin="0,0,0,20"/>
+
+            <!-- Nome e Local do Evento -->
+            <Frame Margin="10" BackgroundColor="Black" BorderColor="#cac7bb">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="{Binding NomeEvento}"
+                           FontFamily="Chewy-Regular"
+                           FontSize="30"
+                           TextColor="#cac7bb"
+                           HorizontalTextAlignment="Center"/>
+
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                        <Label Text="📍"
+                               FontSize="20"/>
+                        <Label Text="{Binding LocalEvento}"
+                               FontSize="18"
+                               TextColor="#cac7bb"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Informações dos Participantes -->
+            <Frame Margin="10" BackgroundColor="Black" BorderColor="#cac7bb">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Participantes"
+                           FontFamily="Chewy-Regular"
+                           FontSize="20"
+                           TextColor="#cac7bb"
+                           HorizontalTextAlignment="Center"/>
+
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                        <Label Text="👥"/>
+                        <Label Text="{Binding NumeroParticipantes}"
+                               FontSize="18"
+                               TextColor="#cac7bb"/>
+                        <Label Text="participantes"
+                               FontSize="16"
+                               TextColor="#cac7bb"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                        <Label Text="Custo por participante:"
+                               FontSize="14"
+                               TextColor="#cac7bb"/>
+                        <Label Text="{Binding CustoPorParticipante, StringFormat='{0:C2}'}"
+                               FontSize="14"
+                               TextColor="#cac7bb"
+                               FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Período do Evento -->
+            <Frame Margin="10" BackgroundColor="Black" BorderColor="#cac7bb">
+                <Grid ColumnDefinitions="*, *, *"
+                      RowDefinitions="Auto, Auto, Auto"
+                      RowSpacing="8"
+                      ColumnSpacing="10">
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+                           Text="Período do Evento"
+                           FontFamily="Chewy-Regular"
+                           FontSize="20"
+                           TextColor="#cac7bb"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" 
+                           Text="📅 Início"
+                           FontSize="14"
+                           TextColor="#cac7bb"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="1" Grid.Column="1" 
+                           Text="📅 Término"
+                           FontSize="14"
+                           TextColor="#cac7bb"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="1" Grid.Column="2" 
+                           Text="⏱️ Duração"
+                           FontSize="14"
+                           TextColor="#cac7bb"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" 
+                           Text="{Binding DataInicio, StringFormat='{0:dd/MM/yyyy}'}"
+                           FontSize="16"
+                           TextColor="#cac7bb"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="2" Grid.Column="1" 
+                           Text="{Binding DataTermino, StringFormat='{0:dd/MM/yyyy}'}"
+                           FontSize="16"
+                           TextColor="#cac7bb"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Grid.Row="2" Grid.Column="2" 
+                           Text="{Binding DuracaoFormatada}"
+                           FontSize="16"
+                           TextColor="#cac7bb"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+                </Grid>
+            </Frame>
+
+            <!-- Custo Total -->
+            <Frame Margin="10" BackgroundColor="Black" BorderColor="#cac7bb">
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="💰 Custo Total do Evento"
+                           FontFamily="Chewy-Regular"
+                           FontSize="24"
+                           TextColor="#cac7bb"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Text="{Binding CustoTotalFormatado}"
+                           FontFamily="Chewy-Regular"
+                           FontSize="35"
+                           TextColor="#90EE90"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"/>
+
+                    <Label Text="{Binding NumeroParticipantes, StringFormat='{0} participantes'}"
+                           FontSize="14"
+                           TextColor="#cac7bb"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding DuracaoFormatada, StringFormat='× {0}'}"
+                           FontSize="14"
+                           TextColor="#cac7bb"
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="{Binding CustoPorParticipante, StringFormat='× {0:C2} por participante'}"
+                           FontSize="14"
+                           TextColor="#cac7bb"
+                           HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Botões -->
+            <VerticalStackLayout Spacing="10" Margin="0,20,0,0">
+                <Button Text="Novo Evento"
+                        FontFamily="Chewy-Regular"
+                        FontSize="20"
+                        BackgroundColor="#cac7bb"
+                        TextColor="Black"
+                        Clicked="Button_NovoEvento_Clicked"/>
+
+                <Button Text="Voltar ao Início"
+                        FontFamily="Chewy-Regular"
+                        FontSize="20"
+                        BackgroundColor="#90EE90"
+                        TextColor="Black"
+                        Clicked="Button_VoltarInicio_Clicked"/>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

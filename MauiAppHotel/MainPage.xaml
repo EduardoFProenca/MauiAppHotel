@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHotel.MainPage"
               Background="{DynamicResource Black}">
-    
+
 
     <ScrollView>
         <VerticalStackLayout
@@ -24,7 +24,19 @@
                 HorizontalOptions="Fill"
                 BackgroundColor="#23507a"
                  FontSize="20"
-                 TextColor="#cac7bb"/> 
+                 TextColor="#cac7bb"/>
+
+            <Button
+                x:Name="CadastroEventoBtn"
+                Text="Cadastro de Eventos" 
+                FontFamily="Chewy-Regular"
+                SemanticProperties.Hint="Navega para a página de cadastro de eventos"
+                Clicked="OnCadastroEventoClicked"
+                HorizontalOptions="Fill"
+                BackgroundColor= "#23507a"
+                 FontSize="20"
+                 TextColor="#cac7bb"/>
+
             <Button
                 x:Name="NavigateBtn"
                 Text="Sobre o app" 
@@ -35,7 +47,7 @@
                 BackgroundColor="#23507a"
                  FontSize="20"
                  TextColor="#cac7bb"
-                /> 
+                />
         </VerticalStackLayout>
     </ScrollView>
 

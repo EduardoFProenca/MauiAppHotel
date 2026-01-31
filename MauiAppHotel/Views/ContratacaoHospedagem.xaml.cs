@@ -35,8 +35,8 @@ public partial class ContratacaoHospedagem : ContentPage
 
         DateTime Date_Selected_check_in = elemento.Date;
 
-        dtpk_check_out.MinimumDate = Date_Selected_check_in.AddDays(1);
-        dtpk_check_out.MaximumDate = Date_Selected_check_in.AddMonths(6);
+       dtpk_check_out.MinimumDate = Date_Selected_check_in.AddDays(1);
+       dtpk_check_out.MaximumDate = Date_Selected_check_in.AddMonths(6);
     }
 
 }
