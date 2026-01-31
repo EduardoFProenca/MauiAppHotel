@@ -15,9 +15,21 @@ Este projeto foi desenvolvido como **Agenda 14** da disciplina de **Desenvolvime
 - **Menção**: MB (Muito Bom)
 - **Feedback do Professor**: "As alterações feitas no Design ficaram ótimas e deixaram seu Aplicativo bem diferenciado, além dos códigos terem funcionado corretamente. Parabéns."
 
+
+
+---
+
+
 ## 📸 Screenshots
 
-*(Adicione aqui capturas de tela do aplicativo quando disponíveis)*
+<p align="center">
+  <img width="180" src="https://github.com/user-attachments/assets/2869294d-c2f5-417e-9a25-d85b78a2af30" />
+  <img width="180" src="https://github.com/user-attachments/assets/343dc15d-599b-444b-8816-a138be030c67" />
+  <img width="180" src="https://github.com/user-attachments/assets/f91ba175-bdbc-4b9f-8713-0dbf402c4a71" />
+  <img width="180" src="https://github.com/user-attachments/assets/81743791-b746-4b8b-80d0-242892129b9d" />
+</p>
+
+
 
 ## ✨ Funcionalidades
 
